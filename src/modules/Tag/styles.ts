@@ -7,5 +7,5 @@ export const Tag = styled.span `
     border: none;
     max-height: 24px;
     height: 100%;
-    font-size: 12px;
+    font-size: 14px;
 `

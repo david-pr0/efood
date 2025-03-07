@@ -14,6 +14,7 @@ export const TitleContainer = styled.div `
 
 export const StyledTitle = styled.h2 `
     color: #E66767;
+    font-size: 18px;
 `
 
 export const StyledText = styled.p `
@@ -47,11 +48,14 @@ export const Resume = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-size: 14px;
+    line-height: 22px;
 
     span {
         cursor: pointer;
         max-width: 80px;
         text-align: center;
+        font-size: 14px;
     }
 `
 
@@ -60,5 +64,10 @@ export const Note = styled.div `
     span {
         color: #E66767;
         font-weight: bold;
+    }
+
+    img {
+        width: 18px;
+        height: 18px;
     }
 `

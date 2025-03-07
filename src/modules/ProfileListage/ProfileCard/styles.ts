@@ -7,8 +7,19 @@ export const StyledCard = styled.div `
     flex-direction: column;
     gap: 8px;
 
+    h3 {
+        font-size: 16px;
+        font-weight: 900;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
     img {
         width: 100%;
+        cursor: pointer;
     }
 `
 
@@ -19,4 +30,5 @@ export const StyledButton = styled.button `
     padding: 4px 0;
     border: none;
     font-weight: bold;
+    font-size: 14px;
 `
