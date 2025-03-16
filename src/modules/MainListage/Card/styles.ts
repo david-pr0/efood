@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import sushi from "../../../assets/sushi.png"
-import ladolcevita from "../../../assets/ladolcevita.png"
 
 type Props = {
-    imgType: number
+    img: string
 }
 
 export const TitleContainer = styled.div `
@@ -28,7 +26,7 @@ export const ImageContainer = styled.div<Props> `
     min-height: 216px;
     width: 100%;
     height: 100%;
-    background-image: url(${({ imgType }: Props) => (imgType === 1 ? sushi : ladolcevita)});
+    background-image: url(${({ img }: Props) => img});
     display: flex;
     justify-content: end;
     padding: 16px;

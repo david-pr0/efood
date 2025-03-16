@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type InitialState = {
+type Restaurant = {
     id: string,
     titulo: string,
     destacado: boolean,
@@ -11,6 +11,8 @@ type InitialState = {
     cardapio: CardapioItem[]
 }
 
+type InitialState = Restaurant[]
+
 type CardapioItem = {
     foto: string,
     preco: number,
@@ -20,7 +22,7 @@ type CardapioItem = {
     porcao: string
 }
 
-const initialState: InitialState = {
+const initialState: InitialState = [{
     id: "1",
     titulo: "teste",
     destacado: true,
@@ -38,7 +40,7 @@ const initialState: InitialState = {
             porcao: "teste"
         }
     ]
-}
+}]
 
 export const dataSlice = createSlice({
     name: "data",

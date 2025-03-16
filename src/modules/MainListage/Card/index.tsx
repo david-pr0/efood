@@ -6,26 +6,19 @@ import { useNavigate } from "react-router-dom"
 type Props = {
     title: string,
     text: string,
-    image: number,
+    image: string,
     score: number,
-    card: number
+    tipo: string,
+    destacado: boolean
 }
 
-const Card = ({title, text, image, score, card}: Props) => {
+const Card = ({title, text, image, score, tipo, destacado}: Props) => {
     const navigate = useNavigate()
     return (
         <li>
-            <S.ImageContainer imgType={image} onClick={() => navigate("/profile")}>
-            {
-                card === 1 ?
-                (
-                    <>
-                        <Tag text="Destaques da semana" />
-                        <Tag text="Japonesa" />
-                    </>
-                ) :
-                <Tag text="Italiana"/>
-            }
+            <S.ImageContainer img={image} onClick={() => navigate("/profile")}>
+                {destacado && <Tag text="Destaques da semana" />}
+                <Tag text={tipo} />
             </S.ImageContainer>
             <S.Resume>
                 <S.TitleContainer>
