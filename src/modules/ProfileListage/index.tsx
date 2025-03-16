@@ -2,6 +2,7 @@ import ProfileCard from "./ProfileCard"
 import * as S from "./styles"
 
 const ProfileListage = () => {
+
     return (
         <>
             <S.ListContainer>

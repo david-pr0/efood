@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type Props = {
+    width: string,
+}
+
 export const StyledCard = styled.div `
     background-color: #e66767;
     padding: 8px;
@@ -23,7 +27,7 @@ export const StyledCard = styled.div `
     }
 `
 
-export const StyledButton = styled.button `
+export const StyledButton = styled.button <Props> `
     cursor: pointer;
     background-color: #FFEBD9;
     color: #e66767;
@@ -31,4 +35,5 @@ export const StyledButton = styled.button `
     border: none;
     font-weight: bold;
     font-size: 14px;
+    max-width: ${({width}) => (width === "100%" ? "100%" : "240px")};
 `
