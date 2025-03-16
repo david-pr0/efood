@@ -1,5 +1,6 @@
 import pizza from "../../../assets/pizza.png"
-import { setVisible, useAppDispatch } from "../../../assets/redux/store"
+import { setVisible } from "../../../assets/redux/slices/modalSlice"
+import { useAppDispatch } from "../../../assets/redux/store"
 import * as S from "./styles"
 
 const ProfileCard = () => {

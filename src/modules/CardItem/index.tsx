@@ -2,7 +2,8 @@ import * as S from "./styles"
 import pizza from "../../assets/pizza.png"
 import close from "../../assets/close.png"
 import { StyledButton } from "../ProfileListage/ProfileCard/styles"
-import { setNotVisible, useAppDispatch } from "../../assets/redux/store"
+import { useAppDispatch } from "../../assets/redux/store"
+import { setNotVisible } from "../../assets/redux/slices/modalSlice"
 
 const CardItem = () => {
     const dispatch = useAppDispatch()
