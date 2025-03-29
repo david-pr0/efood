@@ -1,11 +1,11 @@
 import * as S from "./styles"
-import pizza from "../../assets/pizza.png"
 import close from "../../assets/close.png"
 import { StyledButton } from "../ProfileListage/ProfileCard/styles"
-import { useAppDispatch } from "../../assets/redux/store"
+import { useAppDispatch, useAppSelector } from "../../assets/redux/store"
 import { setNotVisible } from "../../assets/redux/slices/modalSlice"
 
 const CardItem = () => {
+    const data = useAppSelector(state => state.activeModalSlice)
     const dispatch = useAppDispatch()
     const closeModal = () => {
         dispatch(setNotVisible())
@@ -13,17 +13,17 @@ const CardItem = () => {
     return (
         <S.StyledDiv>
             <div>
-                <S.Image src={pizza} alt="pizza" />
+                <S.Image src={data.img} alt="image" />
             </div>
             <S.StyledText>
-                <h3>Pizza Marguerita</h3>
+                <h3>{data.name}</h3>
                 <p>
-                    A pizza Margherita é uma pizza clássica da culinária italiana, reconhecida por sua simplicidade e sabor inigualável. Ela é feita com uma base de massa fina e crocante, coberta com molho de tomate fresco, queijo mussarela de alta qualidade, manjericão fresco e azeite de oliva extra-virgem. A combinação de sabores é perfeita, com o molho de tomate suculento e ligeiramente ácido, o queijo derretido e cremoso e as folhas de manjericão frescas, que adicionam um toque de sabor herbáceo. É uma pizza simples, mas deliciosa, que agrada a todos os paladares e é uma ótima opção para qualquer ocasião.
+                    {data.desc}
                 </p>
                 <p>
-                    Serve: de 2 a 3 pessoas
+                    Serve: de {data.porcao}
                 </p>
-                <StyledButton width="240px">Adicionar ao carrinho - R$ 60,90</StyledButton>
+                <StyledButton width="240px">Adicionar ao carrinho - R$ {data.preco}</StyledButton>
             </S.StyledText>
             <S.Close src={close} alt="close icon" onClick={closeModal}/>
         </S.StyledDiv>

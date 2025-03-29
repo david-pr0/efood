@@ -5,7 +5,6 @@ import { useAppSelector } from "../../assets/redux/store"
 const MainListage = () => {
     const data = useAppSelector(state => state.data)
     const dataArray = Object.values(data)
-    console.log("Data no componente:", data)
     return (
         <S.ListContainer className="container">
             <S.List>
@@ -18,8 +17,8 @@ const MainListage = () => {
                             image={item.capa}
                             score={Number(item.avaliacao)}
                             tipo={item.tipo}
-                            destacado={item.destacado}
-                        />
+                            destacado={item.destacado} 
+                            id={item.id}                     />
                     ))
                 ) : (
                     <p>Carregando dados...</p>  

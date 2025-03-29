@@ -1,9 +1,13 @@
 import styled from "styled-components";
-import ladolcevita from "../../assets/ladolcevita.png"
 
-export const HeroContainer = styled.div `
+
+type Props = {
+    image: string
+}
+
+export const HeroContainer = styled.div <Props>`
     height: 380px;
-    background-image: url(${ladolcevita});
+    background-image: url(${props => props.image});
     background-size: cover;
     background-repeat: no-repeat;
     padding: 32px 0;

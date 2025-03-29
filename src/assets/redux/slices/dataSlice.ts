@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type Restaurant = {
+export type Restaurant = {
     id: string,
     titulo: string,
     destacado: boolean,
@@ -13,7 +13,7 @@ type Restaurant = {
 
 type InitialState = Restaurant[]
 
-type CardapioItem = {
+export type CardapioItem = {
     foto: string,
     preco: number,
     id: string,

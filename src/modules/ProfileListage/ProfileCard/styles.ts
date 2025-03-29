@@ -23,6 +23,8 @@ export const StyledCard = styled.div `
 
     img {
         width: 100%;
+        max-height: 200px;
+        min-height: 200px;
         cursor: pointer;
     }
 `

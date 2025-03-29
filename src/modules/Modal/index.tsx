@@ -6,7 +6,7 @@ const Modal = () => {
     const selector = useAppSelector(state => state.modal.isVisible)
 
     return (
-        <S.ModalContainer isVisible={selector}>
+        <S.ModalContainer isvisible={selector}>
             <div className="container">
                 <CardItem />
             </div>

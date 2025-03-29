@@ -1,30 +1,27 @@
+import { CardapioItem } from "../../assets/redux/slices/dataSlice"
 import ProfileCard from "./ProfileCard"
 import * as S from "./styles"
 
-const ProfileListage = () => {
+type Data = {
+    data: CardapioItem[]
+}
 
+const ProfileListage = ({data}:Data) => {
     return (
         <>
             <S.ListContainer>
                 <S.List className="container">
-                    <li>
-                        <ProfileCard />
-                    </li>
-                    <li>
-                        <ProfileCard />
-                    </li>
-                    <li>
-                        <ProfileCard />
-                    </li>
-                    <li>
-                        <ProfileCard />
-                    </li>
-                    <li>
-                        <ProfileCard />
-                    </li>
-                    <li>
-                        <ProfileCard />
-                    </li>
+                    {
+                        data.length > 0 ? (
+                            data.map(item => (
+                                <li key={item.id}>
+                                    <ProfileCard desc={item.descricao} img={item.foto} name={item.nome} porcao={item.porcao} preco={String(item.preco.toLocaleString("pt-BR", {style: "currency", currency: "BRL"}))}/>
+                                </li>
+                            ))
+                        ) : (
+                            <p>loading</p>
+                        )
+                    }
                 </S.List>
             </S.ListContainer>
         </>

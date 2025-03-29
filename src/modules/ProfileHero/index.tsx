@@ -1,12 +1,17 @@
+import { Restaurant } from "../../assets/redux/slices/dataSlice"
 import * as S from "./styles"
 
-const ProfileHero = () => {
+type Data = {
+    data: Restaurant[]
+}
+
+const ProfileHero = (data :Data) => {
     return (
         <>
-            <S.HeroContainer>
+            <S.HeroContainer image={String(data.data[0].capa)}>
                 <div className="container">
-                    <span>Italiana</span>
-                    <h2>La Dolce Vita Trattoria</h2>
+                    <span>{data.data[0].tipo}</span>
+                    <h2>{data.data[0].titulo}</h2>
                 </div>
             </S.HeroContainer>
         </>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type Props = {
-    isVisible: boolean
+    isvisible: boolean
 }
 
 export const ModalContainer = styled.div <Props> `
@@ -14,7 +14,7 @@ export const ModalContainer = styled.div <Props> `
     bottom: 0;
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.5);
-    display: ${({isVisible}) => (isVisible ? "flex" : "none")};
+    display: ${({isvisible}) => (isvisible === true ? "flex" : "none")};
     justify-content: center;
     align-items: center;
 `
